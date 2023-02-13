@@ -14,6 +14,9 @@ const HeaderContainer = styled.div`
     width: 100%;
     height: 50px;
     box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 `
 
 const BrandHeader = styled.div`

@@ -1,10 +1,10 @@
-import { Toggle } from "../../components/Toggle"
 import styled from 'styled-components';
 import { useEffect, useState } from "react";
 import { fetchPlatformConfig } from "../../platform/manage-config";
 import { SUPPORTED_PLATFORMS } from "../../platform";
 import { SPACING } from "../../design/theme";
-import { sendMessageToContent } from "../../utils/utils";
+
+import { ConfigSection } from "./ConfigSection";
 
 const ConfigManagement = styled.div`
     display: flex;
@@ -17,6 +17,7 @@ const ConfigManagement = styled.div`
 const PlatformConfig = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 `
 
 export const Config = (props) => {
@@ -33,26 +34,14 @@ export const Config = (props) => {
         }
     }, [props.platform])
 
-    const handleConfigToggle = (config, event) => {
-        let payloadMessage = {
-            ...config,
-            remove: event
-        };
-        sendMessageToContent(JSON.stringify(payloadMessage), callbackFromContent);
-    }
-
-    const callbackFromContent = (message) => {
-        console.log('Over and out', message);
-    }
-
     return (
         <ConfigManagement>
             {
-                configList.length > 0 ?
+                Object.keys(configList).length > 0 ?
                 <PlatformConfig>
                     {
-                        configList.map((config) => {
-                            return <Toggle key={config.id} label={config.label} toggled={false} onClick={(e) => handleConfigToggle(config, e)}/>
+                        Object.keys(configList).map((configSection, index) => {
+                            return <ConfigSection key={index} title={configSection} data={configList[configSection]}/>
                         })
                     }
                 </PlatformConfig> : <div>

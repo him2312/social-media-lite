@@ -11,6 +11,9 @@ const FooterContainer = styled.div`
     padding: ${SPACING['medium']};
     height: 40px;
     box-sizing: border-box;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
     .footer-cta {
         cursor: pointer;
         user-select: none;

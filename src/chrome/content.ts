@@ -11,6 +11,7 @@ const messagesFromReactAppListener = (message: ChromeMessage, sender:any, respon
         sender.id === chrome.runtime.id &&
         message.from === Sender.React) {
             let parsedPayload = JSON.parse(message.message);
+            console.log('RECEIVED', parsedPayload);
             DOM_Modifier(parsedPayload);
             response('Executed');
         }

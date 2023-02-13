@@ -7,7 +7,8 @@ const ToggleSwitch = styled.label`
     display: inline-block;
     width: 45px;
     height: 25px;
-    margin-bottom: ${SPACING['medium']};
+    margin-top: ${SPACING['small']};
+    margin-bottom: ${SPACING['small']};
     display: flex;
     align-items: center;
   

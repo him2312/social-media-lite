@@ -6,7 +6,6 @@ import { GOOGLE_REQUEST_FEATURE_FORM } from "./footer/link"
 
 const ManageContainer = styled.div`
     flex: 1;
-    background: ${COLOR_SCHEME.background[400]};
 `
 
 const PlatformHeader = styled.div`
