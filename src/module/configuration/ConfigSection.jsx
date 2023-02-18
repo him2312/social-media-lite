@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Toggle } from "../../components/Toggle"
 import { COLOR_SCHEME, SPACING } from "../../design/theme";
+import { deleteFromLocalStorage, setToLocalStorage } from "../../utils/localStorage";
 import { sendMessageToContent } from "../../utils/utils";
 
 const ConfigList = styled.div`
@@ -33,8 +34,16 @@ export const ConfigSection = (props) => {
             remove: event
         };
         config.value = event;
-        console.log('test', payloadMessage);
+        persistValue(config.id, event);
         sendMessageToContent(JSON.stringify(payloadMessage), callbackFromContent);
+    }
+
+    const persistValue = (tag, event) => {
+        if (event === true) {
+            setToLocalStorage(tag, event)
+        } else {
+            deleteFromLocalStorage(tag)
+        }
     }
 
     const callbackFromContent = (message) => {
@@ -49,7 +58,7 @@ export const ConfigSection = (props) => {
                 <ConfigList>
                     {
                         props.data.map((config) => {
-                            return <Toggle key={config.id} label={config.label} onClick={(event) => handleConfigToggle(config, event)}/>
+                            return <Toggle key={config.id} tag={config.id} toggled={config.value} label={config.label} onClick={(event) => handleConfigToggle(config, event)}/>
                         })
                     }
                 </ConfigList> : null

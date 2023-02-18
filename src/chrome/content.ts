@@ -1,5 +1,5 @@
 import { ChromeMessage, Sender } from "../types";
-import { DOM_Modifier } from "./remover";
+import { actOnEvent } from "./css_modifier.js";
 
 const messagesFromReactAppListener = (message: ChromeMessage, sender:any, response: any) => {
     console.log('[content.js]. Message received', {
@@ -12,7 +12,7 @@ const messagesFromReactAppListener = (message: ChromeMessage, sender:any, respon
         message.from === Sender.React) {
             let parsedPayload = JSON.parse(message.message);
             console.log('RECEIVED', parsedPayload);
-            DOM_Modifier(parsedPayload);
+            actOnEvent(parsedPayload);
             response('Executed');
         }
 }

@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { SPACING } from '../design/theme'
+import { getFromLocalStorage } from '../utils/localStorage'
 
 const ToggleSwitch = styled.label`
     position: relative;
@@ -64,22 +65,28 @@ const ToggleSwitch = styled.label`
 `
 
 type TogglePropsType = {
+    tag: string,
     label: string,
     toggled: boolean,
     onClick: (isToggled: boolean) => void
 }
 
-export const Toggle = ({ label, toggled, onClick }: TogglePropsType) => {
-    const [isToggled, toggle] = useState<boolean>(toggled)
+export const Toggle = ({ tag, label, toggled, onClick }: TogglePropsType) => {
+    const [isToggled, setToggle] = useState<boolean>(toggled)
 
     const callback = () => {
-        toggle(!isToggled)
+        setToggle(!isToggled)
         onClick(!isToggled)
     }
 
+    useEffect(() => {
+        const togglePersistedValue = getFromLocalStorage(tag)
+        setToggle(togglePersistedValue)
+    }, [])
+
     return (
         <ToggleSwitch>
-            <input type="checkbox" defaultChecked={isToggled} onClick={callback} />
+            <input type="checkbox" checked={isToggled} onClick={callback} />
             <span />
             <strong>{label}</strong>
         </ToggleSwitch>
