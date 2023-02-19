@@ -35,7 +35,7 @@ const PLATFORM_METADATA = {
 
 export const SUPPORTED_PLATFORMS = Object.keys(PLATFORM_METADATA);
 
-const detectPlatform = (platformUrl) => {
+export const detectPlatform = (platformUrl) => {
     let URL = new window.URL(platformUrl);
     let BASE_URL = URL.origin;
 

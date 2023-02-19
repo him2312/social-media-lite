@@ -28,8 +28,6 @@ const App = () => {
             const url = tabs[0].url || '';
             getPlatformData(url);
         });
-
-        getPlatformData('https://twitter.com/ui_tutor/status/1619691965414805504');
     }, []);
 
     const getPlatformData = (url: string) => {

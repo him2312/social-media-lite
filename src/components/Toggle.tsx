@@ -82,6 +82,8 @@ export const Toggle = ({ tag, label, toggled, onClick }: TogglePropsType) => {
     useEffect(() => {
         const togglePersistedValue = getFromLocalStorage(tag)
         setToggle(togglePersistedValue)
+        onClick(togglePersistedValue)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

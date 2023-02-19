@@ -22,5 +22,8 @@
       "all_frames": false,
       "run_at": "document_end"
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
