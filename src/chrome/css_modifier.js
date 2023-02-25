@@ -2,12 +2,16 @@
 import {getElementCSS} from './element_css.js';
 
 export const actOnEvent = ({tag, remove}) => {
-    modifyTagFromHTML(tag, remove);
-    if (remove) {
-        let overrideCSS = getElementCSS(tag)
-        addCSS(overrideCSS, tag);
-    } else {
-        removeCSS(tag)
+    let platform = String(tag).split('_')[0]
+    
+    if (window.location.host.includes(platform)) {
+      modifyTagFromHTML(tag, remove);
+      if (remove) {
+          let overrideCSS = getElementCSS(tag)
+          addCSS(overrideCSS, tag);
+      } else {
+          removeCSS(tag)
+      }
     }
 }
 

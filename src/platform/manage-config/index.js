@@ -1,8 +1,10 @@
 import { SUPPORTED_PLATFORMS } from "..";
 import { TWITTER_CONFIG } from "./twitter-config";
+import { YOUTUBE_CONFIG } from "./youtube-config";
 
 const PLATFORM_CONFIG = {
-    'twitter': TWITTER_CONFIG
+    'twitter': TWITTER_CONFIG,
+    'youtube': YOUTUBE_CONFIG,
 }
 
 export const fetchPlatformConfig = (platform) => {

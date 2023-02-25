@@ -1,61 +1,50 @@
 export const TWITTER_CONFIG = {
     'Boost productivity': [
         {
-            id: 'twitterHideHomeFeed',
+            id: 'twitter_HideHomeFeed',
             label: 'Hide Home feed',
-            value: false,
         },
         {
-            id: 'twitterHideWhoToFollow',
+            id: 'twitter_HideWhoToFollow',
             label: `Hide Who to follow`,
-            value: false,
         },
         {
-            id: `twitterHideWhatsHappening`,
+            id: `twitter_HideWhatsHappening`,
             label: `Hide What's happening`,
-            value: false,
         },
         {
-            id: 'twitterHideNotifications',
+            id: 'twitter_HideNotifications',
             label: `Hide Notifications`,
-            value: false,
         },
         {
-            id: 'twitterHidePromotedPosts',
+            id: 'twitter_HidePromotedPosts',
             label: 'Hide Promoted Posts',
-            value: false,
         }
     ],
     'Hide vanity': [
             {
-                id: 'twitterHideAllVanity',
+                id: 'twitter_HideAllVanity',
                 label: 'Hide all tweet metrics',
-                value: false,
             },
             {
-                id: 'twitterHideLikes',
+                id: 'twitter_HideLikes',
                 label: `Hide Likes`,
-                value: false,
             },
             {
-                id: 'twitterHideRetweets',
+                id: 'twitter_HideRetweets',
                 label: `Hide Retweets`,
-                value: false,
             },
             {
-                id: 'twitterHideReply',
+                id: 'twitter_HideReply',
                 label: `Hide Replies`,
-                value: false,
             },
             {
-                id: 'twitterHideViewCount',
+                id: 'twitter_HideViewCount',
                 label: `Hide View count`,
-                value: false,
             },
             {
-                id: 'twitterHideFollowerFollowing',
+                id: 'twitter_HideFollowerFollowing',
                 label: `Hide Follow count`,
-                value: false,
             }
     ]
 }
