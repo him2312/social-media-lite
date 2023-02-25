@@ -1,8 +1,8 @@
 import { ChromeMessage, Sender } from "../types";
 
-export const sendMessageToContent = (messageText: string, callback?: any) => {
+export const sendMessageToContent = (messageText: string, messageFrom: Sender, callback?: any) => {
     const message: ChromeMessage = {
-        from: Sender.React,
+        from: messageFrom,
         message: messageText,
     }
 

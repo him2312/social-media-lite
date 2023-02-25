@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-// import { sendMessageToContent } from './utils/utils';
 import styled from 'styled-components'
 
 import { Header } from './module/Header';

@@ -1,13 +1,13 @@
 
 import {getElementCSS} from './element_css.js';
 
-export const actOnEvent = (payload) => {
-    modifyTagFromHTML(payload.id, payload.remove);
-    if (payload.remove) {
-        let overrideCSS = getElementCSS(payload.id)
-        addCSS(overrideCSS, payload.id);
+export const actOnEvent = ({tag, remove}) => {
+    modifyTagFromHTML(tag, remove);
+    if (remove) {
+        let overrideCSS = getElementCSS(tag)
+        addCSS(overrideCSS, tag);
     } else {
-        removeCSS(payload.id)
+        removeCSS(tag)
     }
 }
 

@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { Toggle } from "../../components/Toggle"
 import { COLOR_SCHEME, SPACING } from "../../design/theme";
 import { deleteFromLocalStorage, setToLocalStorage } from "../../utils/localStorage";
-import { sendMessageToContent } from "../../utils/utils";
 
 const ConfigList = styled.div`
     background: ${COLOR_SCHEME.background[100]};
@@ -29,13 +28,8 @@ const ConfigTitle = styled.div`
 
 export const ConfigSection = (props) => {
     const handleConfigToggle = (config, event) => {
-        let payloadMessage = {
-            ...config,
-            remove: event
-        };
         config.value = event;
         persistValue(config.id, event);
-        sendMessageToContent(JSON.stringify(payloadMessage), callbackFromContent);
     }
 
     const persistValue = (tag, event) => {
@@ -44,10 +38,6 @@ export const ConfigSection = (props) => {
         } else {
             deleteFromLocalStorage(tag)
         }
-    }
-
-    const callbackFromContent = (message) => {
-        console.log('Over and out', message);
     }
 
     return (
