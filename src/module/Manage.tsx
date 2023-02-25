@@ -35,6 +35,7 @@ const PlatformNotSupported = styled.div`
     .not-supported-message {
         margin-bottom: 30px;
         line-height: 1.4;
+        text-align: center;
 
         a:link, a:visited, a:hover, a:active {
             color: ${COLOR_SCHEME.text.primary}
