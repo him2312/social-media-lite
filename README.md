@@ -1,6 +1,8 @@
 ## Welcome to Social Media Lite
 
-This is a tool designed to help you **break free from your social media addiction** by blocking social media features on your web browser. With this extension, you can focus on your work or studies without the constant distractions from social media.
+This is a tool designed to help you **break free from your social media addiction** by blocking social media features on your web browser. 
+
+With this extension, you can focus on your work or studies without the constant distractions from social media.
 
 Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 
