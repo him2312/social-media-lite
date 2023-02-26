@@ -42,3 +42,8 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 - You can pin it and see the changes
 - After every change you will have to `npm run build` and refresh the changes on `chrome://extensions`.
 ![Refresh extension](/screenshots/refresh-extension.png)
+
+
+## Support
+
+If you have any questions, comments, or issues while using the Chrome Extension, please feel free to contact us at [himanshu23work@gmail.com](mailto:himanshu23work@gmail.com).
