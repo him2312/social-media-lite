@@ -1,4 +1,5 @@
 
+import customFunctions from './customFunctions.js';
 import {getElementCSS} from './element_css.js';
 
 export const actOnEvent = ({tag, remove}) => {
@@ -9,14 +10,22 @@ export const actOnEvent = ({tag, remove}) => {
       if (remove) {
           let overrideCSS = getElementCSS(tag)
           addCSS(overrideCSS, tag);
+          runCustomFunction(tag, 'hide')
       } else {
           removeCSS(tag)
+          runCustomFunction(tag, 'undo')
       }
     }
 }
 
 const modifyTagFromHTML = (tag, value) => {
   document.body.parentElement.dataset[tag] = String(value)
+}
+
+const runCustomFunction = (tag, action) => {
+  if (customFunctions[tag]) {
+    customFunctions[tag](action)  
+  }
 }
 
 const addCSS = (css, elementId) => {

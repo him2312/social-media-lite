@@ -74,5 +74,9 @@ export const YOUTUBE_CONFIG = {
                 id: 'youtube_HideTopRightSuggestion',
                 label: `Hide Top Right Suggestion`,
             },
+            {
+                id: 'youtube_HideMoreFromYoutube',
+                label: `Hide More From Youtube`,
+            },
     ]
 }

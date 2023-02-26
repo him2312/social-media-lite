@@ -6,6 +6,11 @@ import TwitterIcon from './images/twitter.png';
 import GmailIcon from './images/gmail.svg';
 
 const PLATFORM_METADATA = {
+    'twitter': {
+        urls: ['https://twitter.com'],
+        icon: TwitterIcon,
+        title: 'Twitter'
+    },
     'youtube': {
         urls: ['https://www.youtube.com', 'https://m.youtube.com'],
         icon: YoutubeIcon,
@@ -25,11 +30,6 @@ const PLATFORM_METADATA = {
         urls: ['https://mail.google.com'],
         icon: GmailIcon,
         title: 'Gmail'
-    },
-    'twitter': {
-        urls: ['https://twitter.com'],
-        icon: TwitterIcon,
-        title: 'Twitter'
     }
 }
 
