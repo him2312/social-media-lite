@@ -44,7 +44,7 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 ![Refresh extension](/screenshots/refresh-extension.png)
 
 ### Architecture
-![Architecture](/screenshots/architecture.jpeg)
+<img src="/screenshots/architecture.jpeg"  width="500" height="500" alt="Architecture">
 
 ### How to add new platform
 - Add the new platform to [PLATFORM_METADATA](src/platform/index.js
