@@ -15,6 +15,9 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 - On Twitter
 ![On Twitter](/screenshots/use-on-twitter.png)
 
+- On LinkedIn
+![On LinkedIn](/screenshots/use-on-linkedin.png)
+
 
 ### How to contribute
 - Fork a branch from `master`
@@ -30,9 +33,12 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 - npm run build
 - Go to `chrome://extensions/`
 - Turn on `Developer mode` on top-right.
+![Developer mode](/screenshots/developer-mode.png)
 - Select `Load unpacked` from top-left.
+![Load unpacked](/screenshots/load-unpacked.png)
 - Choose the `build` folder.
+![Upload build](/screenshots/load-build.png)
 - It should show up in `Extensions` 
 - You can pin it and see the changes
 - After every change you will have to `npm run build` and refresh the changes on `chrome://extensions`.
-
+![Refresh extension](/screenshots/refresh-extension.png)
