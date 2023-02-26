@@ -1,11 +1,12 @@
-import styled from "styled-components"
+import { useContext } from "react"
+import styled, { css } from "styled-components"
+import { StoreContext } from "../../App"
 import { COLOR_SCHEME, SPACING } from "../../design/theme"
+import { ContentThemePropsType } from "../../store/store"
 import { BUY_ME_A_BOOK, GOOGLE_REQUEST_FEATURE_FORM } from "./link"
 
-const FooterContainer = styled.div`
-    background: ${COLOR_SCHEME.background[500]};
+const FooterContainer = styled.div<ContentThemePropsType>`
     font-size: 16px;
-    color: ${COLOR_SCHEME.text.secondary};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,13 +22,22 @@ const FooterContainer = styled.div`
     }
 
     a:link, a:visited, a:hover, a:active {
-        color: ${COLOR_SCHEME.text.secondary};
+        transition: 0.6s;
+        color: ${COLOR_SCHEME['light'].text.secondary};
         text-decoration: unset;
     }
+
+    ${({ currentTheme }) =>
+    css`
+        transition: 0.6s;
+        background: ${COLOR_SCHEME[currentTheme].background[500]};
+        color: ${COLOR_SCHEME[currentTheme].text.secondary};
+    `}
 `
 
-export const Footer = (props: any) => {
-    return (<FooterContainer>
+export const Footer = () => {
+    const { theme } = useContext(StoreContext)
+    return (<FooterContainer currentTheme={theme}>
         <a href={BUY_ME_A_BOOK} target="_blank" rel="noreferrer">
             <div className="footer-cta">
                 Donate

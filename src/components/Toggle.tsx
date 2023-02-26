@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { SPACING } from '../design/theme'
+import { useContext, useEffect, useState } from 'react'
+import styled, { css } from 'styled-components'
+import { StoreContext } from '../App'
+import { SPACING, COLOR_SCHEME } from '../design/theme'
+import { ContentThemePropsType } from '../store/store'
 import { getFromLocalStorage } from '../utils/localStorage'
 
-const ToggleSwitch = styled.label`
+const ToggleSwitch = styled.label<ContentThemePropsType>`
     position: relative;
     display: inline-block;
     width: 45px;
@@ -62,6 +64,12 @@ const ToggleSwitch = styled.label`
     input:checked + span:before {
         transform: translateX(20px);
     }
+
+    ${({ currentTheme }) =>
+    css`
+        transition: 0.6s;
+        color: ${COLOR_SCHEME[currentTheme].text.primary};
+    `}
 `
 
 type TogglePropsType = {
@@ -73,6 +81,7 @@ type TogglePropsType = {
 
 export const Toggle = ({ tag, label, toggled, onClick }: TogglePropsType) => {
     const [isToggled, setToggle] = useState<boolean>(toggled)
+    const { theme } = useContext(StoreContext)
 
     const callback = () => {
         setToggle(!isToggled)
@@ -90,7 +99,7 @@ export const Toggle = ({ tag, label, toggled, onClick }: TogglePropsType) => {
     }, [])
 
     return (
-        <ToggleSwitch>
+        <ToggleSwitch currentTheme={theme}>
             <input type="checkbox" checked={isToggled} onClick={callback} />
             <span />
             <strong>{label}</strong>

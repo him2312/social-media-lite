@@ -1,10 +1,11 @@
-import styled from "styled-components"
+import { useContext } from "react";
+import styled, { css } from "styled-components"
+import { StoreContext } from "../../App";
 import { Toggle } from "../../components/Toggle"
 import { COLOR_SCHEME, SPACING } from "../../design/theme";
 import { deleteFromLocalStorage, setToLocalStorage } from "../../utils/localStorage";
 
 const ConfigList = styled.div`
-    background: ${COLOR_SCHEME.background[100]};
     width: 100%;
     padding: ${SPACING['small']} ${SPACING['medium']};
     display: flex;
@@ -12,6 +13,12 @@ const ConfigList = styled.div`
     justify-content: center;
     box-sizing: border-box;
     border-radius: 8px;
+
+    ${({ currentTheme }) =>
+    css`
+        transition: 0.6s;
+        background: ${COLOR_SCHEME[currentTheme].background[100]};
+    `}
 `
 
 const ConfigSeparator = styled.div`
@@ -24,9 +31,17 @@ const ConfigTitle = styled.div`
     font-weight: 500;
     text-align: left;
     margin-bottom: ${SPACING['small']};
+
+    ${({ currentTheme }) =>
+    css`
+        transition: 0.6s;
+        color: ${COLOR_SCHEME[currentTheme].text.primary};
+    `}
 `
 
 export const ConfigSection = (props) => {
+    const { theme } = useContext(StoreContext);
+
     const handleConfigToggle = (config, event) => {
         config.value = event;
         persistValue(config.id, event);
@@ -42,10 +57,10 @@ export const ConfigSection = (props) => {
 
     return (
         <ConfigSeparator>
-            <ConfigTitle>{props.title}</ConfigTitle>
+            <ConfigTitle currentTheme={theme}>{props.title}</ConfigTitle>
             {
                 props.data.length > 0 ? 
-                <ConfigList>
+                <ConfigList currentTheme={theme}>
                     {
                         props.data.map((config) => {
                             return <Toggle key={config.id} tag={config.id} toggled={config.value} label={config.label} onClick={(event) => handleConfigToggle(config, event)}/>

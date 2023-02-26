@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react"
-import styled from "styled-components"
+import { useContext, useEffect, useState } from "react"
+import styled, { css } from "styled-components"
+import { StoreContext } from "../App"
 import { COLOR_SCHEME, EXTENSION_NAME, SPACING } from "../design/theme"
+import { ContentThemePropsType } from "../store/store"
 import { Config } from "./configuration/Config"
 import { GOOGLE_REQUEST_FEATURE_FORM } from "./footer/link"
 
@@ -8,7 +10,7 @@ const ManageContainer = styled.div`
     flex: 1;
 `
 
-const PlatformHeader = styled.div`
+const PlatformHeader = styled.div<ContentThemePropsType>`
     display: flex;
     align-items: center;
     padding: ${SPACING['large']} ${SPACING['medium']};
@@ -18,19 +20,30 @@ const PlatformHeader = styled.div`
         height: 30px;
         margin-right: ${SPACING['medium']};
     }
+
+    ${({ currentTheme }) =>
+    css`
+        transition: 0.6s;
+        color: ${COLOR_SCHEME[currentTheme].text.primary};
+    `}
 `
 
 const PlatformSupported = styled.div`
 
 `
 
-const PlatformNotSupported = styled.div`
+const PlatformNotSupported = styled.div<ContentThemePropsType>`
     padding: ${SPACING['large']} ${SPACING['x-large']};
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100%;
+    ${({ currentTheme }) =>
+        css`
+            transition: 0.6s;
+            color: ${COLOR_SCHEME[currentTheme].text.primary};
+    `}
 
     .not-supported-message {
         margin-bottom: 30px;
@@ -38,7 +51,11 @@ const PlatformNotSupported = styled.div`
         text-align: center;
 
         a:link, a:visited, a:hover, a:active {
-            color: ${COLOR_SCHEME.text.primary}
+            ${({ currentTheme }) =>
+            css`
+                transition: 0.6s;
+                color: ${COLOR_SCHEME[currentTheme].text.primary};
+            `}
         }
     }
 
@@ -49,6 +66,7 @@ const PlatformNotSupported = styled.div`
 
 export const Manage = (props: any) => {
     const [isPlatformSupport, setIsPlatformSupported] = useState(false);
+    const { theme } = useContext(StoreContext);
 
     useEffect(() => {
         if (props.data.title) {
@@ -60,14 +78,14 @@ export const Manage = (props: any) => {
         {
             isPlatformSupport ? 
             (<PlatformSupported>
-                <PlatformHeader>
+                <PlatformHeader currentTheme={theme}>
                     <img src={props.data.icon} alt={props.data.title} className="platform-logo"/>
                     Manage { props.data.title }
                 </PlatformHeader>
 
                 <Config platform={props.data.title}/>
             </PlatformSupported>) : 
-            (<PlatformNotSupported>
+            (<PlatformNotSupported currentTheme={theme}>
                 <hr/>
                 <div className="not-supported-message">
                     This website is not yet<br/>
