@@ -14,7 +14,7 @@ export const COLOR_SCHEME = {
         }
     }, 
     'light': {
-        brand: '#ffa1a1',
+        brand: '#ECECEC',
         background: {
             100:'#FFFFFF',
             200:'#ECECEC',
