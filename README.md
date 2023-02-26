@@ -13,7 +13,7 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 
 ### Screenshots
 - On Twitter
-![On Twitter]('/screenshots/use-on-twitter.png')
+![On Twitter](/screenshots/use-on-twitter.png)
 
 
 ### How to contribute
