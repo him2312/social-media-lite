@@ -43,6 +43,8 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 - After every change you will have to `npm run build` and refresh the changes on `chrome://extensions`.
 ![Refresh extension](/screenshots/refresh-extension.png)
 
+### Architecture
+![Architecture](/screenshots/architecture.jpeg)
 
 ## Support
 
