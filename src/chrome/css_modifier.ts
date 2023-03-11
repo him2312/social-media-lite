@@ -1,6 +1,6 @@
 
-import customFunctions from './customFunctions.js';
-import {getElementCSS} from './element_css.js';
+import customFunctions from './customFunctions';
+import {getElementCSS} from './element_css';
 
 export const actOnEvent = ({tag, remove}: {tag: string, remove: boolean}) => {
     let platform = String(tag).split('_')[0]

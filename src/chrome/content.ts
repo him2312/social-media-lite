@@ -1,5 +1,5 @@
 // import { ChromeMessage, Sender } from "../types";
-import { actOnEvent } from "./css_modifier.js";
+import { actOnEvent } from "./css_modifier";
 
 // const messagesFromReactAppListener = (message: ChromeMessage, sender:any, response: any) => {
 //     console.log('[content.js]. Message received', {
