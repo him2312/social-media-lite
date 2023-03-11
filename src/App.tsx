@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { Header } from './module/Header';
 import { Manage } from './module/Manage';
-// import { Todo } from './module/Todo';
+import { Todo } from './module/Todo';
 import { Footer } from './module/footer/Footer';
 import { fetchPlatformMetadata } from './platform';
 import { COLOR_SCHEME } from './design/theme';
@@ -62,7 +62,7 @@ const App = () => {
                 <Header />
                 <Content currentTheme={state.theme}>
                     <Manage data={platformData}/>
-                    {/* <Todo /> */}
+                    <Todo />
                 </Content>
                 <Footer/>
             </div>

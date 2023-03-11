@@ -5,7 +5,15 @@ import LinkedinIcon from './images/linkedin.png';
 import TwitterIcon from './images/twitter.png';
 import GmailIcon from './images/gmail.svg';
 
-const PLATFORM_METADATA = {
+type PlatformMetadataType = Record<string, PlatformType>
+
+type PlatformType = {
+    urls: string[],
+    icon: string,
+    title: string
+}
+
+const PLATFORM_METADATA: PlatformMetadataType = {
     'twitter': {
         urls: ['https://twitter.com'],
         icon: TwitterIcon,
@@ -35,7 +43,7 @@ const PLATFORM_METADATA = {
 
 export const SUPPORTED_PLATFORMS = Object.keys(PLATFORM_METADATA);
 
-export const detectPlatformFromUrl = (platformUrl) => {
+export const detectPlatformFromUrl = (platformUrl: string) => {
     let URL = new window.URL(platformUrl);
     let BASE_URL = URL.origin;
 
@@ -51,7 +59,7 @@ export const detectPlatformFromUrl = (platformUrl) => {
     return DETECTED_PLATFROM;
 }
 
-export const fetchPlatformMetadata = (platformUrl) => {
+export const fetchPlatformMetadata = (platformUrl: string) => {
     let platform = detectPlatformFromUrl(platformUrl);
 
     if (PLATFORM_METADATA[platform]) {

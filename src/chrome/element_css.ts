@@ -1,4 +1,6 @@
-const TWITTER_CSS = {
+type CSSConfigType = Record<string, string>
+
+const TWITTER_CSS: CSSConfigType = {
     'twitter_HideHomeFeed': `html:not([data-twitter_hide_home_feed="false"]) div[aria-label*="Your Home Timeline"],div[aria-label*="New Tweets"] {
         opacity: 0 !important;
         pointer-events: none !important;
@@ -63,7 +65,7 @@ const TWITTER_CSS = {
     `
 }
 
-const YOUTUBE_CSS = {
+const YOUTUBE_CSS: CSSConfigType = {
     'youtube_HideHomeFeed': `html[data-youtube_-hide-home-feed="true"] ytd-browse[page-subtype="home"] .ytd-rich-grid-renderer {
         display: none !important;
     }`,
@@ -123,7 +125,7 @@ const YOUTUBE_CSS = {
     }`,
 }
 
-const INSTAGRAM_CSS = {
+const INSTAGRAM_CSS: CSSConfigType = {
     // 'instagram_HideHomeFeed': `.x9f619 {
     //     display: none !important;
     // }`,
@@ -150,7 +152,7 @@ const INSTAGRAM_CSS = {
     }`
 }
 
-const GMAIL_CSS = {
+const GMAIL_CSS: CSSConfigType = {
     'mail.google_HideAllEmail': `.AO {
         display: none !important;
     }`,
@@ -174,7 +176,7 @@ const GMAIL_CSS = {
     }`
 }
 
-const LINKEDIN_CSS = {
+const LINKEDIN_CSS: CSSConfigType = {
     'linkedin_HideFeed': `.scaffold-finite-scroll {
         display: none !important;
     }`,
@@ -222,17 +224,18 @@ const LINKEDIN_CSS = {
 }
 
 
-export const getElementCSS = (tag) => {
-    if (String(tag).startsWith('twitter')) {
+export const getElementCSS = (tag: string): string => {
+    if (tag.startsWith('twitter')) {
         return TWITTER_CSS[tag] || '';
-    } else if (String(tag).startsWith('youtube')) {
+    } else if (tag.startsWith('youtube')) {
         return YOUTUBE_CSS[tag] || '';
-    } else if (String(tag).startsWith('instagram')) {
+    } else if (tag.startsWith('instagram')) {
         return INSTAGRAM_CSS[tag] || ''
-    } else if (String(tag).startsWith('mail.google')) {
+    } else if (tag.startsWith('mail.google')) {
         return GMAIL_CSS[tag] || ''
-    } else if (String(tag).startsWith('linkedin')) {
+    } else if (tag.startsWith('linkedin')) {
         return LINKEDIN_CSS[tag] || ''
     }
+    return ''
 }
 

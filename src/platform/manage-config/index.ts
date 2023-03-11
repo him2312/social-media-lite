@@ -5,7 +5,9 @@ import { LINKEDIN_CONFIG } from "./linkedin-config";
 import { TWITTER_CONFIG } from "./twitter-config";
 import { YOUTUBE_CONFIG } from "./youtube-config";
 
-const PLATFORM_CONFIG = {
+type PlatformType = Record<string, any>
+
+const PLATFORM_CONFIG: PlatformType = {
     'twitter': TWITTER_CONFIG,
     'youtube': YOUTUBE_CONFIG,
     'instagram': INSTAGRAM_CONFIG,
@@ -13,7 +15,7 @@ const PLATFORM_CONFIG = {
     'linkedin': LINKEDIN_CONFIG,
 }
 
-export const fetchPlatformConfig = (platform) => {
+export const fetchPlatformConfig = (platform: string) => {
     let platformName = platform.toLowerCase();
 
     if (SUPPORTED_PLATFORMS.includes(platformName)) {
