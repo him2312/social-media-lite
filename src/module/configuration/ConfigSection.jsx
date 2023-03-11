@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled, { css } from "styled-components"
 import { StoreContext } from "../../App";
-import { Toggle } from "../../components/Toggle"
+import { Toggle } from "../../components"
 import { COLOR_SCHEME, SPACING } from "../../design/theme";
 import { deleteFromLocalStorage, setToLocalStorage } from "../../utils/localStorage";
 
@@ -43,7 +43,6 @@ export const ConfigSection = (props) => {
     const { theme } = useContext(StoreContext);
 
     const handleConfigToggle = (config, event) => {
-        config.value = event;
         persistValue(config.id, event);
     }
 
@@ -63,7 +62,7 @@ export const ConfigSection = (props) => {
                 <ConfigList currentTheme={theme}>
                     {
                         props.data.map((config) => {
-                            return <Toggle key={config.id} tag={config.id} toggled={config.value} label={config.label} onClick={(event) => handleConfigToggle(config, event)}/>
+                            return <Toggle key={config.id} tag={config.id} label={config.label} handleClick={(event) => handleConfigToggle(config, event)}/>
                         })
                     }
                 </ConfigList> : null

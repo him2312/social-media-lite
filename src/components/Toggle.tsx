@@ -76,16 +76,16 @@ type TogglePropsType = {
     tag: string,
     label: string,
     toggled: boolean,
-    onClick: (isToggled: boolean) => void
+    handleClick: (isToggled: boolean) => void
 }
 
-export const Toggle = ({ tag, label, toggled, onClick }: TogglePropsType) => {
-    const [isToggled, setToggle] = useState<boolean>(toggled)
+export const Toggle = ({ tag, label, toggled, handleClick }: TogglePropsType) => {
+    const [isToggled, setToggle] = useState<boolean>(false)
     const { theme } = useContext(StoreContext)
 
     const callback = () => {
         setToggle(!isToggled)
-        onClick(!isToggled)
+        handleClick(!isToggled)
     }
 
     useEffect(() => {
@@ -100,7 +100,7 @@ export const Toggle = ({ tag, label, toggled, onClick }: TogglePropsType) => {
 
     return (
         <ToggleSwitch currentTheme={theme}>
-            <input type="checkbox" checked={isToggled} onClick={callback} />
+            <input type="checkbox" checked={isToggled} onChange={callback} />
             <span />
             <strong>{label}</strong>
         </ToggleSwitch>

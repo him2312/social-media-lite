@@ -13,7 +13,6 @@ import { Action, initialState, reducer, ContentThemePropsType } from './store/st
 const Content = styled.div<ContentThemePropsType>`
     display: flex;
     height: 510px;
-    overflow-y: auto;
     box-sizing: border-box;
 
     ${({ currentTheme }) =>
@@ -44,6 +43,12 @@ const App = () => {
             const url = tabs[0].url || '';
             getPlatformData(url);
         });
+
+        if (process.env.NODE_ENV === 'development') {
+            // During development, we are in localhost and not on any social media
+            // This is to pass a dummy URL to fake detect Twitter
+            getPlatformData('https://twitter.com/home');
+        }
     }, []);
 
     const getPlatformData = (url: string) => {

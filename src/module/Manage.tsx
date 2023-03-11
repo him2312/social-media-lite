@@ -7,7 +7,8 @@ import { Config } from "./configuration/Config"
 import { GOOGLE_REQUEST_FEATURE_FORM } from "./footer/link"
 
 const ManageContainer = styled.div`
-    flex: 1;
+    flex: 1.2;
+    overflow-y: auto;
 `
 
 const PlatformHeader = styled.div<ContentThemePropsType>`

@@ -21,3 +21,10 @@ export const sendMessageToContent = (messageText: string, messageFrom: Sender, c
             });
     });
 }
+
+export const removeTodoIdentifier = (task: string | undefined) => {
+    if (task) {
+        return task.replace('todo_', '')
+    }
+    return ''
+}

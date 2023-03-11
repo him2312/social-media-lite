@@ -1,12 +1,11 @@
 export const setToLocalStorage = (tag: string, value: boolean) => {
-    // localStorage.setItem(tag, String(value));
     chrome.storage?.local?.set({ [tag]: value }).then(() => {
         console.log("Value is set to " + value);
     });
 }
 
 export const deleteFromLocalStorage = (tag: string) => {
-    // localStorage.removeItem(tag);
+    console.log('deleteFromLocalStorage', tag)
     chrome.storage?.local?.remove(tag)
 }
 
@@ -17,5 +16,16 @@ export const getFromLocalStorage = (tag: string) => {
             resolve(result[tag])
         });
     })
-    // return Boolean(localStorage.getItem(tag)) || false;
 }
+
+type LocalStorageType = Record<string, boolean>
+
+export const getAllItemsFromStorage = (): Promise<LocalStorageType> => {
+    return new Promise((resolve) => {
+        chrome.storage?.local?.get().then((result) => {
+            console.log(`Local storage: ${result}`);
+            resolve(result)
+        });
+    })
+}
+
