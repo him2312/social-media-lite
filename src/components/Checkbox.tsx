@@ -13,7 +13,7 @@ const CheckboxContainer = styled.input`
 
     :checked {
         cursor: not-allowed;
-        transition: 1s;
+        transition: 0.6s;
         opacity: 0;
     }
 `

@@ -12,7 +12,7 @@ const TodoItemContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 8px;
+    margin-top: 10px;
     width: 100%;
 `
 
@@ -28,7 +28,7 @@ const Task = styled.div<ContentThemePropsType & {completed: boolean}>`
 
     ${({ completed }) =>
         css`
-            transition: 1s;
+            transition: 0.6s;
             opacity: ${completed ? '0' : '1'};
             text-decoration: ${completed ? 'line-through' : ''};
         `}
@@ -58,7 +58,7 @@ export const TodoItem = (props: TodoItemProps) => {
 
             setTimeout(() => {
                 deleteFromLocalStorage(String(props.task))
-            }, 1000)
+            }, 600)
         } else {
             event.stopPropagation()
         }

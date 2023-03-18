@@ -16,7 +16,7 @@ const FooterContainer = styled.div<ContentThemePropsType>`
     position: sticky;
     bottom: 0;
     z-index: 10;
-    box-shadow: 0px 4px 20px 0px #707070;
+    box-shadow: 0px 15px 20px 0px #707070;
     .footer-cta {
         cursor: pointer;
         user-select: none;

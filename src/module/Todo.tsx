@@ -32,19 +32,12 @@ const TodoHeader = styled.div<ContentThemePropsType>`
 const TaskList = styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 `
 
 const NewTask = styled.div<ContentThemePropsType>`
     display: flex;
     width: 90%;
-    position: sticky;
-    bottom: 0;
-    padding: ${SPACING['medium']} 0px;
-    ${({ currentTheme }) =>
-    css`
-        transition: 0.6s;
-        background: linear-gradient(0deg, ${COLOR_SCHEME[currentTheme].background[300]} 80%, transparent);
-    `}
 `
 
 
@@ -87,6 +80,9 @@ export const Todo = () => {
         <TodoHeader currentTheme={theme}>
             Task of the day
         </TodoHeader>
+        <NewTask currentTheme={theme}>
+            <TodoItem type="new"/>
+        </NewTask>
         <TaskList>
             {
                 taskList.map((todo) => (
@@ -94,8 +90,5 @@ export const Todo = () => {
                 ))
             }
         </TaskList>
-        <NewTask currentTheme={theme}>
-            <TodoItem type="new"/>
-        </NewTask>
     </TodoContainer>)
 }
