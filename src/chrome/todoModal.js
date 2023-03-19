@@ -21,6 +21,7 @@ export function createTodo(todoItemsStringified) {
 
         // Change Document Title -> because notification count in title gives FOMO too
         document.title = 'Back to work'
+        window.location.hash = `back-to-work-${todoItems.length}-item${todoItems.length > 1 ? 's': ''}-left`;
 
         // Create Backdrop
         const backdrop = document.createElement('div');
@@ -29,7 +30,6 @@ export function createTodo(todoItemsStringified) {
         backdrop.style.inset = '0px';
         backdrop.style.height = '100vh';
         backdrop.style.width = '100vw';
-        backdrop.style.filter = 'blur(40px)';
 
         backdrop.style.background = generateRandomLinearGradient();
         document.body.appendChild(backdrop)
