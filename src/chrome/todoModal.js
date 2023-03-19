@@ -8,7 +8,7 @@ function generateRandomLinearGradient() {
       hexCode += hexValues.charAt(Math.floor(Math.random() * hexValues.length));
     }
 
-    var gradient = `linear-gradient(${deg}deg, #${hexCode}, #${hexCode})`;
+    var gradient = `linear-gradient(${deg}deg, #000000 ,#${hexCode}, #FFFFFF`;
 
     return gradient;
 }
@@ -19,6 +19,9 @@ export function createTodo(todoItemsStringified) {
         // Delete Social media
         document.body.replaceChildren('');
 
+        // Change Document Title -> because notification count in title gives FOMO too
+        document.title = 'Back to work'
+
         // Create Backdrop
         const backdrop = document.createElement('div');
         backdrop.id = 'todo-backdrop';
@@ -26,7 +29,7 @@ export function createTodo(todoItemsStringified) {
         backdrop.style.inset = '0px';
         backdrop.style.height = '100vh';
         backdrop.style.width = '100vw';
-        backdrop.style.filter = 'blur(10px)';
+        backdrop.style.filter = 'blur(40px)';
 
         backdrop.style.background = generateRandomLinearGradient();
         document.body.appendChild(backdrop)
@@ -40,6 +43,7 @@ export function createTodo(todoItemsStringified) {
         todoModal.style.borderRadius = '6px';
         todoModal.style.background = '#000000';
         todoModal.style.zIndex = '10';
+        todoModal.style.boxShadow = '1px 1px 10px 0px rgba(0,0,0, 0.5)';
 
         // Header Item
         const headerItem = document.createElement('h1');

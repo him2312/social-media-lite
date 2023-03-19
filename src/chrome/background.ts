@@ -20,6 +20,9 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
 });
 
+// This will trigger on tab switch.
+// Eg. If Instagram was already open, and you added some tasks
+// When you come back it should be blocked.
 chrome.tabs.onActivated.addListener(() => {
     chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
         var tabId = Number(tabs[0].id);
