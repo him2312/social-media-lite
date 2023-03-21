@@ -30,6 +30,7 @@ export function createTodo(todoItemsStringified) {
         backdrop.style.inset = '0px';
         backdrop.style.height = '100vh';
         backdrop.style.width = '100vw';
+        backdrop.style.zIndex = '99';
 
         backdrop.style.background = generateRandomLinearGradient();
         document.body.appendChild(backdrop)
@@ -88,6 +89,7 @@ export function createTodo(todoItemsStringified) {
         modalContainer.style.height = '100vh';
         modalContainer.style.width = '100vw';
         modalContainer.style.background = 'transparent';
+        modalContainer.style.zIndex = '100';
 
         modalContainer.appendChild(todoModal);
         document.body.appendChild(modalContainer);
