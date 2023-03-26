@@ -1,8 +1,14 @@
 ## Welcome to Social Media Lite
 
-This is a tool designed to help you **break free from your social media addiction** by blocking social media features on your web browser. 
+I didn't like how social media had taken over me. I had no control over my time, my relationships, my work.
 
-With this extension, you can focus on your work or studies without the constant distractions from social media.
+Everytime I was bored or overwhelmed with work, I started scrolling. Worst part? I believed its not my fault.
+
+But it was about time I had to do something about it.
+
+Presenting this tool designed to help you **break free from your social media addiction** by blocking social media features on your web browser OR all of it.
+
+With this extension, you can focus on *what matters* without the constant distractions from social media.
 
 Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 
@@ -14,6 +20,10 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 - Google Mail
 
 ### Screenshots
+
+- When you have Tasks
+![Blocks social media](/screenshots/block-social-media.png)
+
 - On Twitter
 ![On Twitter](/screenshots/use-on-twitter.png)
 
@@ -46,7 +56,7 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 ![Refresh extension](/screenshots/refresh-extension.png)
 
 ### Architecture
-<img src="/screenshots/architecture.jpeg"  width="500" height="500" alt="Architecture">
+<img src="/screenshots/architecture.jpeg" alt="Architecture">
 
 ### How to add new platform
 - Add the new platform to [PLATFORM_METADATA](src/platform/index.ts)
