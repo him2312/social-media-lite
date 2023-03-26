@@ -21,7 +21,7 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 
 ### Screenshots
 
-- When you have Tasks
+- When you have Tasks (Twitter)
 ![Blocks social media](/screenshots/block-social-media.png)
 
 - On Twitter
