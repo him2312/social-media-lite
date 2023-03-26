@@ -1,6 +1,6 @@
 {
   "name": "Social Media Lite - Youtube | Twitter | LinkedIn | Instagram | Gmail",
-  "description": "Manage and declutter your social media experience. Hide Home Feed, Suggestions, Shorts, Tweets, etc and browse distraction free",
+  "description": "Manage and declutter your social media experience. Block social media to complete your tasks. Hide Home Feed, Suggestions, Shorts, Tweets, etc and browse distraction free",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -13,7 +13,6 @@
     "128": "social-media-lite.png"
   },
   "permissions": [
-    "activeTab",
     "tabs",
     "storage",
     "scripting"

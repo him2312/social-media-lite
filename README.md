@@ -64,6 +64,7 @@ Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
 - Create the CSS styling in [element_css.ts](src/chrome/element_css.ts)
 - [content.ts](src/chrome/content.ts) will detect the changes in `chrome.storage` and trigger changes
 - Make sure your `id` in Config is similar to `key` in CSS styles. (For reference - [Twitter Config](src/platform/manage-config/twitter-config.ts) and [Twitter CSS](src/chrome/element_css.ts))
+- Add to `host_permissions` in [manifest.json](public/manifest.json)
 
 ## Support
 
