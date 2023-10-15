@@ -11,8 +11,8 @@ Presenting this tool designed to help you **break free from your social media ad
 With this extension, you can focus on *what matters* without the constant distractions from social media.
 
 Origin of the idea: https://twitter.com/ui_tutor/status/1619691940899078145
-Chrome Web Store: https://chromewebstore.google.com/detail/social-media-lite/galolbkcdfpbbekjfhoeepehofifohbg
-Demo video: https://youtu.be/GDvCaKO9knY
+[Chrome Web Store](https://chromewebstore.google.com/detail/social-media-lite/galolbkcdfpbbekjfhoeepehofifohbg)
+[Demo video](https://youtu.be/GDvCaKO9knY)
 
 ### Supports all major platforms
 - Youtube
